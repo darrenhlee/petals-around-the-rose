@@ -11,4 +11,4 @@ players_answer = input("How many petals are around the rose? ")
 if (players_answer == str(petal_info[0])):
     print("Correct!")
 else:
-    print("Wrong! There are {petals} petals around the rose.")
+    print(f"Wrong! There are {petal_info[0]} petals around the rose.")

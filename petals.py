@@ -1,11 +1,11 @@
 import random
 
-def roll_dice(num_dice = 5):
+def roll_dice(num_dice):
     return [random.randint(1, 6) for die in range(num_dice)]
 
-def get_dice_symbols(dice_array):
-    for die in dice_array:
-        match die:
+def get_dice_symbols(dice_values):
+    for die_value in dice_values:
+        match die_value:
             case 1:
                 yield "⚀"
             case 2:
@@ -19,14 +19,12 @@ def get_dice_symbols(dice_array):
             case 6:
                 yield "⚅"
 
-def calculate_petals(dice_array):
+def calculate_petals(dice_values):
     petals = 0
 
-    for die in dice_array:
-        if die % 2 == 0:
-            petals += 0
-        else:
-            petals += die - 1
+    for die_value in dice_values:
+        if die_value % 2 != 0:
+            petals += die_value - 1
 
     return petals
 
