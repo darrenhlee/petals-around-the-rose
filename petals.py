@@ -21,15 +21,7 @@ def get_dice_symbols(dice_values):
 
 def calculate_petals(dice_values):
     petals = 0
-
     for die_value in dice_values:
         if die_value % 2 != 0:
             petals += die_value - 1
-
     return petals
-
-def get_petals(num_dice = 5):
-    dice_values = roll_dice(num_dice)
-    num_petals = calculate_petals(dice_values)
-    dice_symbols = get_dice_symbols(dice_values)
-    return num_petals, dice_symbols
